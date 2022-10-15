@@ -1,0 +1,11 @@
+@import './common.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+    p {
+        @apply text-light-blue text-[14px] text-center lg:text-xl
+    }
+}

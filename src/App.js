@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Devider from "./components/ui/Devider";
+import HomePage from "./pages/HomePage/Index";
+import ProductDetail from "./pages/ProductDetail/Index";
+import SubcatalogPage from "./pages/Subcatalog/Index";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (  
+    <Routes>
+      <Route index element={<HomePage />} />
+      <Route path="/:catalog" element={<SubcatalogPage />} />
+      {/* <Route path="/:catalog/:subcatalog" element={<ProductDetail />} /> */}
+      <Route path="/:catalog/:subcatalog/:id" element={<ProductDetail />} />
+    </Routes>
   );
 }
 
