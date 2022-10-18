@@ -5,21 +5,21 @@ import Container from "../ui/Container";
 import Title from "./../ui/Title";
 import Devider from "./../ui/Devider";
 import Button from "../ui/Button";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
   return (
-    <Container id="about" className={"flex flex-col items-center lg:flex-row lg:gap-20"}>
+    <Container
+      id="about"
+      className={"flex flex-col items-center lg:flex-row lg:gap-20"}
+    >
       <div className="flex flex-col items-center lg:items-start">
-        <Title>About Us</Title>
+        <Title>{t("about")}</Title>
         <Devider half />
-        <p className="lg:text-left">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt explicabo.
-        </p>
+        <p className="lg:text-left">{t("about_title")}</p>
         <Devider half />
-        <Button>Learn more</Button>
+        <Button>{t("more")}</Button>
         <Devider half />
       </div>
       <img src={img} alt="" className="lg:max-w-3xl" />

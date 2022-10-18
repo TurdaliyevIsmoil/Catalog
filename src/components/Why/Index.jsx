@@ -4,21 +4,21 @@ import Container from "./../ui/Container";
 import Devider from "./../ui/Devider";
 import Button from "./../ui/Button";
 import Title from "../ui/Title";
+import { useTranslation } from "react-i18next";
 
 const Why = () => {
+  const { t } = useTranslation();
   return (
-    <Container id="why" className={"flex flex-col items-center lg:flex-row-reverse lg:gap-14"}>
+    <Container
+      id="why"
+      className={"flex flex-col items-center lg:flex-row-reverse lg:gap-14"}
+    >
       <div className="flex flex-col items-center lg:items-start">
-        <Title>Why Customers Love Us</Title>
+        <Title>{t("why_love")}</Title>
         <Devider half />
-        <p className="lg:text-left">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt explicabo.
-        </p>
+        <p className="lg:text-left">{t("about_title")}</p>
         <Devider half />
-        <Button>Learn more</Button>
+        <Button>{t("more")}</Button>
         <Devider half />
       </div>
       <img src={img} alt="" />

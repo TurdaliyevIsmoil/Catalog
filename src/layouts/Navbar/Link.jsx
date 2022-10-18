@@ -1,13 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-function Link({ title, link }) {
+import { Link as Navlink } from "react-scroll";
+function Link({ title, link, ...rest }) {
   return (
-    <NavLink
+    <Navlink
       to={`${link}`}
-      className="p-1 w-full lg:w-auto text-center hover:text-red lg:font-medium duration-300"
+      {...rest}
+      className="p-1 cursor-pointer w-full lg:w-auto text-center hover:text-red lg:font-medium duration-300"
     >
       {title}
-    </NavLink>
+    </Navlink>
   );
 }
 

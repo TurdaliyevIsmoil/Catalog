@@ -6,9 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import ProductCard from "./../../../components/ui/ProductCard/Index";
 import "swiper/css";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
+import { useDataContext } from "../../../context/context";
+import { useTranslation } from "react-i18next";
 
 const TopProducts = () => {
+  const { t } = useTranslation();
   const [slider, setslider] = useState({});
+  const { topProducts } = useDataContext();
 
   const next = () => {
     slider.slideNext();
@@ -19,7 +23,7 @@ const TopProducts = () => {
 
   return (
     <Container>
-      <Title>Top Products</Title>
+      <Title>{t("top_products")}</Title>
       <Devider half />
       <Swiper
         spaceBetween={50}
@@ -39,18 +43,11 @@ const TopProducts = () => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => setslider(swiper)}
       >
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProductCard />
-        </SwiperSlide>
+        {topProducts?.map((i) => (
+          <SwiperSlide>
+            <ProductCard {...i} />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <div className="flex gap-2 justify-center mt-6 lg:justify-end">
         <button className="py-4 px-10 rounded-xl bg-[#F0F9FF]" onClick={prev}>

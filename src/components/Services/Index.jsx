@@ -2,11 +2,13 @@ import React from "react";
 import Devider from "../ui/Devider";
 import Container from "./../ui/Container";
 import Title from "./../ui/Title";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
   return (
     <Container id="services">
-      <Title>Our Services</Title>
+      <Title>{t("services")}</Title>
       <Devider half />
       <div className="flex flex-col gap-3 lg:grid lg:grid-cols-3 lg:gap-5">
         <Service

@@ -7,8 +7,10 @@ import ProductCard from "../../../components/ui/ProductCard/Index";
 import "swiper/css";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import NewsCard from "./../../../components/ui/NewsCard/Index";
+import { useTranslation } from "react-i18next";
 
-const OurNews = () => {
+const OurNews = ({ news }) => {
+  const { t } = useTranslation();
   const [slider, setslider] = useState({});
 
   const next = () => {
@@ -20,7 +22,7 @@ const OurNews = () => {
 
   return (
     <Container id="news">
-      <Title>Our News</Title>
+      <Title>{t("news")}</Title>
       <Devider half />
       <Swiper
         spaceBetween={50}
@@ -40,18 +42,11 @@ const OurNews = () => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => setslider(swiper)}
       >
-        <SwiperSlide>
-          <NewsCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <NewsCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <NewsCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <NewsCard />
-        </SwiperSlide>
+        {news.map((i) => (
+          <SwiperSlide>
+            <NewsCard {...i} />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <div className="flex gap-2 justify-center mt-6 lg:justify-end">
         <button className="py-4 px-10 rounded-xl bg-[#F0F9FF]" onClick={prev}>

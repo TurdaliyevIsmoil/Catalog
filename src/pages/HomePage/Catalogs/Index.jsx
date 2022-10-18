@@ -5,12 +5,13 @@ import Devider from "../../../components/ui/Devider";
 import Item from "./Item";
 import List from "./List";
 
-const Catalogs = () => {
+const Catalogs = ({ data, title }) => {
+  console.log("ss",data)
   return (
     <Container id="catalogs">
-      <Title>Explore by Catalog </Title>
+      <Title>{title} </Title>
       <Devider half />
-      <List />
+      <List data={data} />
     </Container>
   );
 };

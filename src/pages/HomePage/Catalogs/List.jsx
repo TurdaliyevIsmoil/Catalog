@@ -1,17 +1,14 @@
 import React from "react";
+import { useDataContext } from "../../../context/context";
 import Item from "./Item";
 
-function List({}) {
+function List({ data }) {
+  console.log(data);
   return (
     <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
-      <Item title="Hotel" count={12} />
-      <Item title="Hotel" count={12} />
-      <Item title="Hotel" count={12} />
-      <Item title="Hotel" count={12} />
-      <Item title="Hotel" count={12} />
-      <Item title="Hotel" count={12} />
-      <Item title="Hotel" count={12} />
-      <Item title="Hotel" count={12} />
+      {data.map((i) => (
+        <Item title={i.catalogName} id={i.id} link={i.link} />
+      ))}
     </div>
   );
 }
