@@ -7,15 +7,14 @@ import Map from "./../../components/Map";
 import Footer from "../../components/Footer/Index";
 import { useParams } from "react-router-dom";
 import { useDataContext } from "../../context/context";
+import { API } from "../../API";
 
 const ProductDetail = () => {
   const [data, setdata] = useState();
   const { id } = useParams();
   useEffect(() => {
     window.scrollTo({ top: 0 });
-    fetch(
-      "http://49.12.13.213:9090/api/v1/product/get-product?product-id=" + id
-    )
+    fetch(API + "/api/v1/product/get-product?product-id=" + id)
       .then((i) => i.json())
       .then((i) => setdata(i.data));
   }, []);

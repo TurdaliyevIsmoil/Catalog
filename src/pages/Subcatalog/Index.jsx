@@ -6,13 +6,14 @@ import Catalogs from "../HomePage/Catalogs/Index";
 import AllProducts from "./AllProducts/Index";
 import Map from "./../../components/Map";
 import { useParams } from "react-router-dom";
+import { API } from "../../API";
 
 const SubcatalogPage = () => {
   const [subcatalogs, setsubcatalogs] = useState([]);
   const { id } = useParams();
   useEffect(() => {
     window.scrollTo({ top: 0 });
-    fetch("http://49.12.13.213:9090/api/v1/subcatalog/list")
+    fetch(API + "/api/v1/subcatalog/list")
       .then((i) => i.json())
       .then((i) => i.data.filter((i) => i.catalog_id === +id))
       .then((i) =>
