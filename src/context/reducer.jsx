@@ -12,5 +12,8 @@ export default (state, { payload, type }) => {
     case "topProducts": {
       return { ...state, topProducts: payload };
     }
+    case "list": {
+      return { ...state, list: payload };
+    }
   }
 };

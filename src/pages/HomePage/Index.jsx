@@ -12,6 +12,7 @@ import Map from "../../components/Map";
 import Footer from "../../components/Footer/Index";
 import { useDataContext } from "../../context/context";
 import { useTranslation } from "react-i18next";
+import List from "../../components/List/List";
 
 const HomePage = () => {
   const { news, catalogs } = useDataContext();
@@ -34,6 +35,8 @@ const HomePage = () => {
       <Banner />
       <Devider />
       <Catalogs data={data} title={t("explore_category")} />
+      <Devider />
+      <List />
       <Devider />
       <TopProducts />
       <Devider />
