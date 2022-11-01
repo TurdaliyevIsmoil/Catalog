@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
 function Item({ title, id, link }) {
+  const { t } = useTranslation();
   return (
     <NavLink
       to={`${link}`}
@@ -10,7 +12,7 @@ function Item({ title, id, link }) {
       }}
     >
       <h2 className="text-xl text-center">{title}</h2>
-      <p className="text-lg">Catalog</p>
+      <p className="text-lg">{t("catalog")}</p>
     </NavLink>
   );
 }

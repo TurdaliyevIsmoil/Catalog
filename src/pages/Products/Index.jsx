@@ -12,11 +12,11 @@ const Products = () => {
   const [data, setdata] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch(API + "/api/v1/subcatalog/product?offset=0&limit=20&id=" + id)
+    fetch(API + "/api/v1/subcatalog/product?offset=0&limit=60&id=" + id)
       .then((i) => i.json())
       .then((i) => setdata(i.data));
     window.scrollTo({ top: 0 });
-  }, []);
+  }, [id]);
   return (
     <div>
       <Navbar />

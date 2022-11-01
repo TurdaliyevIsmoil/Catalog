@@ -15,5 +15,10 @@ module.exports = {
       cerulean: "#185CFF",
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant("child", "& > *");
+      addVariant("child-hover", "& > *:hover");
+    },
+  ],
 };

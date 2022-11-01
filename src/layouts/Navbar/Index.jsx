@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import logo from "../../images/logo.png";
-import Link from "./Link";
 import Container from "./../../components/ui/Container";
 import Menu from "./Menu";
 import Actions from "./Actions";
-import { NavLink, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [mobile, setmobile] = useState(false);

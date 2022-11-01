@@ -17,7 +17,7 @@ const About = () => {
       <div className="flex flex-col items-center lg:items-start">
         <Title>{t("about")}</Title>
         <Devider half />
-        <p className="lg:text-left">{t("about_title")}</p>
+        <p className="lg:text-left text-base">{t("about_title")}</p>
         <Devider half />
         <Button>{t("more")}</Button>
         <Devider half />

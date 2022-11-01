@@ -6,7 +6,6 @@ import Item from "./Item";
 import List from "./List";
 
 const Catalogs = ({ data, title }) => {
-  console.log("ss",data)
   return (
     <Container id="catalogs">
       <Title>{title} </Title>
