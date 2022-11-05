@@ -26,7 +26,7 @@ const Details = ({
           <div className="flex items-center w-full justify-between">
             <h1 className="text-lg lg:text-2xl">
               {t("price")}:{" "}
-              <span className="text-cerulean">${productPrice}</span>
+              <span className="text-cerulean">{productPrice} <sub>uzs</sub></span>
             </h1>
             <h1 className="text-cerulean text-lg lg:text-2xl">
               {productIsActive ? t("stock") : ""}
