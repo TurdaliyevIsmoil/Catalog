@@ -11,7 +11,7 @@ function Item({ title, id, link }) {
         border: "1px solid #DFDFDF",
       }}
     >
-      <h2 className="text-xl text-center">{title}</h2>
+      <h2 className="lg:text-xl text-base  text-center">{title}</h2>
       <p className="text-lg">{t("catalog")}</p>
     </NavLink>
   );

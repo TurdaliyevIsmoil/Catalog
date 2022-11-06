@@ -80,7 +80,7 @@ const Calculator = ({ productPrice, id }) => {
         />
       </div>
       <div className="flex font-semibold mt-4">
-        <div className="text-2xl">Overall Price: ${price || 0}</div>
+        <div className="text-2xl">Overall Price: {price || 0} uzs</div>
       </div>
     </Container>
   );

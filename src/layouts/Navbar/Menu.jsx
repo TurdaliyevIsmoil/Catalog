@@ -39,7 +39,7 @@ function Menu({ mobile, toggleMenu }) {
         className="z-[99] cursor-pointer hidden lg:block relative curso-pointer child:hidden child:hover:grid py-4"
       >
         {t("catalogs")}
-        <div className="z-[99] drop-shadow-xl rounded-md absolute grid grid-cols-3 top-full pt-6 mt-0 border-t-2 border-[blue] pb-7 px-7 w-[700px] -right-[200px] inset bg-white gap-4">
+        <div className="z-[99] drop-shadow-xl rounded-md absolute grid grid-cols-3 top-full pt-6 mt-0 border-t-2 border-[blue] pb-7 px-7 w-[700px] max-h-auto lg:max-h-[80vh] lg:overflow-scroll -right-[200px] inset bg-white gap-4">
           {catalogs?.map((i) => (
             <div className="capitalize text-base font-semibold">
               <NavLink className={"hover:text-red"} to={`/catalog/${i.id}`}>

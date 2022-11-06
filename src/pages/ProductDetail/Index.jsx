@@ -6,9 +6,7 @@ import Details from "./Detail/Index";
 import Map from "./../../components/Map";
 import Footer from "../../components/Footer/Index";
 import { useParams } from "react-router-dom";
-import { useDataContext } from "../../context/context";
 import { API } from "../../API";
-import Calculator from "./Calculator";
 
 const ProductDetail = () => {
   const [data, setdata] = useState();
